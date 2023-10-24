@@ -5,6 +5,7 @@ import useStore from "../zustand/store";
 import useFetch from '../custom-hooks/useFetch'
 import Modal from '../components/Modal';
 import EditProfileModal from '../components/EditProfileModal';
+import BoardSection from '../components/BoardSection';
 
 
 
@@ -39,6 +40,7 @@ const {fetchPost} = useFetch()
           saveData= {profileState}
           closeModal={setToggleEditProfileModal}
         />}
+        <BoardSection></BoardSection>
     </StyledMain>
 
     </>
