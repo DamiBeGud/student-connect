@@ -4,7 +4,8 @@ import { useEffect } from "react"
 const useFetch = (url, setZustand) =>{
     
  
-    const fetchPost = async (url, data) =>{
+    const fetchPost = async (url, data , setZustandFetch) =>{
+        console.log(url)
         try {  
             const response = await fetch(url,{
                 method: 'POST',
@@ -18,16 +19,17 @@ const useFetch = (url, setZustand) =>{
                 }
             const responseData = await response.json()
             console.log('Response data', responseData)
-
-            
+            if(responseData.newpost){
+                setZustandFetch(responseData.data)
+            }
 
             
         } catch (error) {
             console.error('Error', error)
         }
     }
+
     useEffect(()=>{
- 
         fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -37,9 +39,7 @@ const useFetch = (url, setZustand) =>{
         })
         .then( data => {
             console.log('Data:', data)
-            setZustand(data)
-            
-            
+            setZustand(data)         
   })
   .catch(error => {
     console.error('Error:', error)

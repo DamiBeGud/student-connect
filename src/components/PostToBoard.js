@@ -22,7 +22,7 @@ import useStore from '../zustand/store'
 
 function PostToBoard() {
   const user = useStore((state => state.profile))
-  const setReFetch = useStore((state)=> state.setReFetch)
+  const setProfileBoardAddOne = useStore((state)=> state.setProfileBoardAddOne)
   const postText = useRef()
   const [uploadFile, setUploadFile] = useState('')
   const [fileUrl, setFileUrl] = useState()
@@ -68,7 +68,7 @@ function PostToBoard() {
                   lastname:user.lastname,
                   postText: postText.current.value,
                   imageUrl:fileUrl
-                })}}/>
+                },setProfileBoardAddOne)}}/>
                 </Wrapper>
 
                 
