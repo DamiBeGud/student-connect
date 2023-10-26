@@ -88,3 +88,30 @@ height: 1.5em;
 background-color: ${({theme})=> theme.backgroundColors.header};
 /* background-color: red; */
 `
+export const StyledUploadImage = styled.img`
+    max-width: 20em;
+    max-height: 20em;
+    object-fit: cover;
+    /* margin-left: 5em;
+    margin-top: 1em;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+`
+export const StyledLoadingImage = styled.div`
+    width: 30em;
+    height: 15em;
+    margin-left: 5em;
+    margin-top: 1em;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const StyledImageWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+`

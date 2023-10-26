@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect } from "react"
+
 
 const useFetch = (url, setZustand) =>{
-
+    
+ 
     const fetchPost = async (url, data) =>{
         try {  
             const response = await fetch(url,{
@@ -16,6 +18,8 @@ const useFetch = (url, setZustand) =>{
                 }
             const responseData = await response.json()
             console.log('Response data', responseData)
+
+            
 
             
         } catch (error) {

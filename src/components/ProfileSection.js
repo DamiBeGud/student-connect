@@ -21,6 +21,9 @@ function ProfileSection() {
   const profile = useStore(state=> state.profile)
   const setToggleEditProfileModal = useStore(state => state.setToggleEditProfileModal)
 
+
+
+  // console.log(profile)
   return (
     <StyledProfileSection>
         <StyledProfileWrapper>
