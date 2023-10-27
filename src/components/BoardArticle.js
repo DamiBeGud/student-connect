@@ -23,11 +23,11 @@ import {StyledBoardArticle,
     StyledCommentButton} from './styled/StyledBoardArticle'
 
 import useFetch from '../custom-hooks/useFetch'
-
+import useStore from '../zustand/store'
 function BoardArticle({data}) {
     const comment = useRef()
     const {fetchPost} = useFetch()
-    
+    const  setProfileBoardComment = useStore((state)=> state. setProfileBoardComment)
 const {
     _id,
     userID,
@@ -88,7 +88,7 @@ const {
                         lastname:lastname,
                         comment:comment.current.value,
                         profileImgUrl:'https://images.unsplash.com/photo-1564564244660-5d73c057f2d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3V5fGVufDB8fDB8fHww&w=1000&q=80'
-                    });comment.current.value = ""}}/>
+                    },setProfileBoardComment);comment.current.value = ""}}/>
                 </StyledNewCommentWrapper>
             </StyledArticleCommentSection>
         </StyledBoardArticleFooter>

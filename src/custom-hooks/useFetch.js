@@ -5,7 +5,7 @@ const useFetch = (url, setZustand) =>{
     
  
     const fetchPost = async (url, data , setZustandFetch) =>{
-        console.log(url)
+  
         try {  
             const response = await fetch(url,{
                 method: 'POST',
@@ -19,8 +19,9 @@ const useFetch = (url, setZustand) =>{
                 }
             const responseData = await response.json()
             console.log('Response data', responseData)
-            if(responseData.newpost){
+            if(responseData.actions){
                 setZustandFetch(responseData.data)
+                console.log(responseData.data)
             }
 
             
